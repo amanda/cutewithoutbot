@@ -1,4 +1,6 @@
 cutewithoutbot
 ==============
 
-twitter bot that removes the e from the end of words and tweets a taking back sunday song from them for some ~*song inspiration*~.
+Twitter bot that removes the "e" from the end of English words that end in "e" and tweets a Taking Back Sunday-inspired song title from them for some ~inspiration~.
+
+Tweeting here: https://twitter.com/cutewithout
