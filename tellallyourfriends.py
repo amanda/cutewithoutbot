@@ -42,11 +42,10 @@ def run():
 		status = generate_status()
 		if status is not None:
 			twitter.update_status(status=status)
-			twitter.update_status(status='testing')
 		time.sleep(3600)
 	except TwythonError:
 	 	pass
 
 if __name__ == '__main__':
 	while True:
-		run()
+	 	run()
