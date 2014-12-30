@@ -42,7 +42,7 @@ def run():
 		status = generate_status()
 		if status is not None:
 			twitter.update_status(status=status)
-		time.sleep(3600)
+		time.sleep(1800)
 	except TwythonError:
 	 	pass
 
