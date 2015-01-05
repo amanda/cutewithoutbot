@@ -4,10 +4,10 @@ import os
 from textblob import TextBlob
 import time
 
-API_KEY = os.getenv('API_KEY')
-API_SECRET = os.getenv('API_SECRET')
-OAUTH_KEY = os.getenv('OAUTH_KEY')
-OAUTH_SECRET = os.getenv('OAUTH_SECRET')
+API_KEY = os.environ['API_KEY']
+API_SECRET = os.environ['API_SECRET']
+OAUTH_KEY = os.environ['OAUTH_KEY']
+OAUTH_SECRET = os.environ['OAUTH_SECRET']
 
 twitter = Twython(API_KEY, API_SECRET, OAUTH_KEY, OAUTH_SECRET)
 
@@ -50,6 +50,7 @@ def run():
 		songs = generate_songlist()
 		status = choice(songs)
 		twitter.update_status(status=status)
+		#print status
 		time.sleep(3600)
 	except TwythonError:
 	 	pass
