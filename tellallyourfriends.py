@@ -50,10 +50,11 @@ def run():
 		songs = generate_songlist()
 		status = choice(songs)
 		twitter.update_status(status=status)
-		#print status
+		print status
 		time.sleep(3600)
 	except TwythonError:
-	 	pass
+		print 'twython error'
+	  	pass
 
 if __name__ == '__main__':
 	while True:
