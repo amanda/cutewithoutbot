@@ -52,8 +52,8 @@ def run():
 		twitter.update_status(status=status)
 		print status
 		time.sleep(3600)
-	except TwythonError:
-		print 'twython error'
+	except TwythonError as e:
+		print e
 	  	pass
 
 if __name__ == '__main__':
