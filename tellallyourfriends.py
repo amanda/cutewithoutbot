@@ -25,7 +25,7 @@ with open('sowpods.txt') as f:
 def find_nouns(words):
 	blob = TextBlob(words)
 	tags = blob.tags
-	nouns = [t[0] for t in tags if t[1] == ('NN' or 'NNP' or 'NNS')]
+	nouns = [t[0].pluralize() for t in tags if t[1] == ('NN' or 'NNP' or 'NNS')]
 	return nouns
 
 nounset = set(find_nouns(words)) #unicode
@@ -36,7 +36,7 @@ def generate_songlist():
 	for w in e_wordset:
 		no_e = w[:-1]
 		if no_e in wordset and no_e in nounset:
-			song = w.lower() + ' without the e (' + w[:-1].lower() + 's for the team)'
+			song = w.lower() + ' without the e (' + w[:-1].lower() + ' for the team)'
 			songs.append(song)
 		elif no_e in wordset:
 			song = w.lower() + ' without the e (' + w[:-1].lower() + ' from the team)'
@@ -56,4 +56,4 @@ def run():
 
 if __name__ == '__main__':
 	while True:
-	 	run()
+		run()
