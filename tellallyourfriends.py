@@ -9,6 +9,11 @@ API_SECRET = os.getenv('API_SECRET')
 OAUTH_KEY = os.getenv('OAUTH_KEY')
 OAUTH_SECRET = os.getenv('OAUTH_SECRET')
 
+print API_KEY
+print API_SECRET
+print OAUTH_KEY
+print OAUTH_SECRET
+
 twitter = Twython(API_KEY, API_SECRET, OAUTH_KEY, OAUTH_SECRET)
 
 def strip_ends(wordlist): #hacky, get rid of /r from ewords file
