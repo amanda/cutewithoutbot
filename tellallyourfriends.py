@@ -18,14 +18,14 @@ with open('sowpods.txt') as f:
 	words = f.read()
 	wordset = set(words.split('\n'))
 
-def strip_ends(wordlist): #hacky, get rid of /r from ewords file
+def strip_ends(wordlist): # hacky, get rid of /r from ewords file
 	new = [w[:-1].lower() for w in wordlist]
 	return new
 
 blob = TextBlob(words)
 tags = blob.tags
 nounset = set([t[0] for t in tags if t[1] == ('NN' or 'NNP' or 'NNS')])
-nouns_dict = {t[0]: t[0].pluralize() for t in tags if t[1] == ('NN' or 'NNP' or 'NNS')} #{noun: plural nouns}
+nouns_dict = {t[0]: t[0].pluralize() for t in tags if t[1] == ('NN' or 'NNP' or 'NNS')} # {noun: plural noun}
 e_wordset = set(strip_ends(endswithe.split('\n')))
 
 def generate_songlist():
